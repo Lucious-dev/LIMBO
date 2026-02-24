@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card bg-dark border-secondary">
+            <div class="card-body">
+                <h3 class="mb-3">New Paste</h3>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Syntax Highlighting</label>
+                        <select name="syntax" class="form-select bg-dark text-light border-secondary">
+                            <option value="plaintext">Plain Text</option>
+                            <option value="python">Python</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="sql">SQL</option>
+                            <option value="bash">Bash/Shell</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="burn" name="burn">
+                        <label class="form-check-label text-danger" for="burn">
+                            🔥 Burn after reading (Hapus setelah 1x dilihat)
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea name="content" class="form-control bg-black text-light font-monospace" rows="15" placeholder="Paste kode kamu di sini..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger w-100">Create Paste</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
